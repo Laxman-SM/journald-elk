@@ -23,7 +23,7 @@ while True:
 		"SYSLOG_FACILITY" : "3",
 		"SYSLOG_IDENTIFIER" : "journal-selftest-heartbeat",
 		"_SELINUX_CONTEXT" : "system_u:system_r:init_t:s0",
-		"MESSAGE": "self_test_journald_heartbeat"
+		"MESSAGE": json.dumps({"message": "self_test_journald_heartbeat", "meaning": 42, "category": "test"})
 	}
 
 	journal.send(**entry)
